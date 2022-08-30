@@ -39,6 +39,6 @@ a correlation matrix
 Creates a publication-ready / formatted correlation matrix, using \code{Hmisc::rcorr} in the backend.
 }
 \examples{
-correlation_matrix(iris)`
+correlation_matrix(iris)
 correlation_matrix(mtcars)
 }

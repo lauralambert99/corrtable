@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' save_correlation_matrix(df = iris, filename = 'iris-correlation-matrix.csv')`
+#' save_correlation_matrix(df = iris, filename = 'iris-correlation-matrix.csv')
 #' save_correlation_matrix(df = mtcars, filename = 'mtcars-correlation-matrix.csv', digits = 3, use = 'lower')
 #'
 save_correlation_matrix = function(df, filename, ...) {
