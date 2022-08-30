@@ -2,3 +2,5 @@
 
 export(correlation_matrix)
 export(save_correlation_matrix)
+importFrom(utils,install.packages)
+importFrom(utils,write.csv2)

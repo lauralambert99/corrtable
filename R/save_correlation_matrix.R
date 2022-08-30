@@ -8,9 +8,16 @@
 #' @return NULL
 #' @export
 #'
+#' @importFrom utils write.csv2
+#'
 #' @examples
-#' save_correlation_matrix(df = iris, filename = 'iris-correlation-matrix.csv')
-#' save_correlation_matrix(df = mtcars, filename = 'mtcars-correlation-matrix.csv', digits = 3, use = 'lower')
+#' save_correlation_matrix(df = iris,
+#'                         filename = 'iris-correlation-matrix.csv')
+#'
+#' save_correlation_matrix(df = mtcars,
+#'                         filename = 'mtcars-correlation-matrix.csv',
+#'                         digits = 3,
+#'                         use = 'lower')
 #'
 save_correlation_matrix = function(df, filename, ...) {
   write.csv2(correlation_matrix(df, ...), file = filename)

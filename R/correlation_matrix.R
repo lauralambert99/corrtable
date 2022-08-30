@@ -12,6 +12,8 @@
 #' @return a correlation matrix
 #' @export
 #'
+#' @importFrom utils install.packages
+#'
 #' @examples
 #' correlation_matrix(iris)
 #' correlation_matrix(mtcars)
@@ -35,7 +37,8 @@ correlation_matrix <- function(df,
     is.character(replacement)
   })
   # we need the Hmisc package for this
-  require(Hmisc)
+  if(!requireNamespace("Hmisc", quietly = TRUE))
+    install.packages("Hmisc")
 
   # retain only numeric and boolean columns
   isNumericOrBoolean = vapply(df, function(x) is.numeric(x) | is.logical(x), logical(1))

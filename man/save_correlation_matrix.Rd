@@ -17,7 +17,12 @@ save_correlation_matrix(df, filename, ...)
 Creates and save to file a fully formatted correlation matrix, using \code{correlation_matrix} and \code{Hmisc::rcorr} in the backend
 }
 \examples{
-save_correlation_matrix(df = iris, filename = 'iris-correlation-matrix.csv')
-save_correlation_matrix(df = mtcars, filename = 'mtcars-correlation-matrix.csv', digits = 3, use = 'lower')
+save_correlation_matrix(df = iris,
+                        filename = 'iris-correlation-matrix.csv')
+
+save_correlation_matrix(df = mtcars,
+                        filename = 'mtcars-correlation-matrix.csv',
+                        digits = 3,
+                        use = 'lower')
 
 }
