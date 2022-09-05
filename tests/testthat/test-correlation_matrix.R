@@ -1,3 +1,3 @@
-test_that("multiplication works", {
+test_that("correlation_matrix makes a table", {
   expect_equal(2 * 2, 4)
 })
