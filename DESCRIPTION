@@ -3,7 +3,7 @@ Title: Creates and Saves Out a Correlation Table with Significance Levels Indica
 Version: 0.0.0.9000
 Authors@R: 
     c(person("Paul", "van der Laken", , "paulvanderlaken@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID")),
+           comment = c(ORCID = "0000-0002-0404-9114")),
     person("Laura", "Lambert", , "laura.lambert.99@gmail.com", role = c("ctb"),
            comment = c(ORCID = "0000-0003-4057-7114")))
 Maintainer: Paul van der Laken, <paulvanderlaken@gmail.com>
