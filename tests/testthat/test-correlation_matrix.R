@@ -1,3 +1,6 @@
+#' @importFrom waldo compare
+#' @importFrom withr local_options
+
 test_that("correlation_matrix creates a matrix", {
   df = data.frame(
     mtcars$mpg, mtcars$cyl)
