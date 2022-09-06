@@ -9,7 +9,6 @@ Authors@R:
 Maintainer: Paul van der Laken, <paulvanderlaken@gmail.com>
 Description: This package creates a correlation table (full, upper, or lower 
   diagonal) and includes the option of asteriks for p-values.  
-
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
