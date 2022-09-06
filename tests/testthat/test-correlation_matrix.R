@@ -5,7 +5,7 @@ test_that("correlation_matrix creates a matrix", {
   df = data.frame(
     mtcars$mpg, mtcars$cyl)
 
-  expect_equal(is.matrix(correlation_matrix(df)), TRUE)
+  expect_true(is.matrix(correlation_matrix(df)))
 
   })
 
@@ -19,9 +19,11 @@ test_that("Correlation matrix makes expected matrix", {
   mat_test <- matrix(c("1.000", "-0.852***", "-0.852***", "1.000"), nrow = 2, ncol = 2,
                      dimnames = list(rnames,cnames))
 
-  withr::local_options(width = 20)
+  format_mat_test = formatC(mat_test, format = 'f', digits = digits, decimal.mark = decimal.mark)
+
+  withr::local_options(width = 40)
   expect_snapshot(
-    waldo::compare(correlation_matrix(df), mat_test)
+    waldo::compare(correlation_matrix(df), format_mat_test)
   )
 })
 
