@@ -1,2 +1,5 @@
 ^corrtable\.Rproj$
 ^\.Rproj\.user$
+^cran-comments\.Rmd$
+^CRAN-SUBMISSION$
+^cran-comments\.md$
