@@ -1,4 +1,4 @@
-# Correlation matrix makes expected matrix
+# Correlation matrix makes expected matrix - no args
 
     Code
       waldo::compare(correlation_matrix(df),

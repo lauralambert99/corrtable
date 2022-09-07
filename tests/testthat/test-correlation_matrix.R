@@ -10,7 +10,7 @@ test_that("correlation_matrix creates a matrix", {
   })
 
 
-test_that("Correlation matrix makes expected matrix", {
+test_that("Correlation matrix makes expected matrix - no args", {
   df = data.frame(
     mtcars$mpg, mtcars$cyl)
 
