@@ -10,7 +10,7 @@ test_that("correlation_matrix creates a matrix", {
   })
 
 
-test_that("Correlation matrix makes expected matrix", {
+test_that("Correlation matrix makes expected matrix - no args", {
   df = data.frame(
     mtcars$mpg, mtcars$cyl)
 
@@ -27,4 +27,12 @@ test_that("Correlation matrix makes expected matrix", {
   )
 })
 
+test_that("Correlation matrix drops string vars", {
+  df2 = data.frame(iris)
+  df3 <- df2[-5]
 
+  withr::local_options(width = 40)
+  expect_snapshot(
+    waldo::compare(correlation_matrix(df2), cor(df3))
+  )
+})
