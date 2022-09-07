@@ -1,6 +1,6 @@
 Package: corrtable
 Title: Creates and Saves Out a Correlation Table with Significance Levels Indicated
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     c(person("Paul", "van der Laken", , "paulvanderlaken@gmail.com", role = c("aut"),
            comment = c(ORCID = "0000-0002-0404-9114")),
