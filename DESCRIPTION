@@ -2,13 +2,17 @@ Package: corrtable
 Title: Creates and Saves Out a Correlation Table with Significance Levels Indicated
 Version: 0.0.0.9000
 Authors@R: 
-    c(person("Paul", "van der Laken", , "paulvanderlaken@gmail.com", role = c("aut", "cre"),
+    c(person("Paul", "van der Laken", , "paulvanderlaken@gmail.com", role = c("aut"),
            comment = c(ORCID = "0000-0002-0404-9114")),
-    person("Laura", "Lambert", , "laura.lambert.99@gmail.com", role = c("ctb"),
+    person("Laura", "Lambert", , "laura.lambert.99@gmail.com", role = c("ctb", "cre"),
            comment = c(ORCID = "0000-0003-4057-7114")))
 Maintainer: Laura Lambert, <laura.lambert.99@gmail.com>
 Description: This package creates a correlation table (full, upper, or lower 
-  diagonal) and includes the option of asteriks for p-values.  
+  diagonal) and includes asteriks for p-values.  Input can be a full dataframe;
+  strings and booleans will be dropped as part of functionality.  Correlations and
+  p-values are calculated using the Hmisc framework.  Output of the 
+  correlation_matrix function is a table of strings; this gets saved out to a csv
+  with the save_correlation_matrix function for easy insertion into a paper.
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
