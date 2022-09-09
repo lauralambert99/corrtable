@@ -12,6 +12,7 @@ Description: Creates a correlation table (full, upper, or lower
   p-values are calculated using the 'Hmisc' framework.  Output of the 
   correlation_matrix() function is a table of strings; this gets saved out to a '.csv2'
   with the save_correlation_matrix() function for easy insertion into a paper.
+  For more details about the process, \https://paulvanderlaken.com/2020/07/28/publication-ready-correlation-matrix-significance-r/\
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
