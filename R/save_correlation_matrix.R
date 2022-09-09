@@ -5,7 +5,8 @@
 #' @param filename either a character string naming a file or a connection open for writing. "" indicates output to the console; passed to `write.csv`
 #' @param ... any other arguments passed to `correlation_matrix`
 #'
-#' @return NULL
+#'
+#' @return 'csv' file.  No value is returned.
 #' @export
 #'
 #' @importFrom utils write.csv2
