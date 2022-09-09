@@ -16,3 +16,5 @@ This is a resubmission.  In this version I have:
 *removed the install of 'Hmisc' within correlation_matrix() function
 
 *added Output information for save_correlation_matrix()
+
+*dataframe is not a potentially misspelled word
