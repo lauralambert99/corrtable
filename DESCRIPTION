@@ -9,9 +9,9 @@ Authors@R:
 Description: Creates a correlation table (full, upper, or lower 
   diagonal) and includes asterisks for p-values.  Input can be a full dataframe;
   strings and Boolean terms will be dropped as part of functionality.  Correlations and
-  p-values are calculated using the Hmisc framework.  Output of the 
-  correlation_matrix function is a table of strings; this gets saved out to a .csv2
-  with the save_correlation_matrix function for easy insertion into a paper.
+  p-values are calculated using the 'Hmisc' framework.  Output of the 
+  correlation_matrix() function is a table of strings; this gets saved out to a '.csv2'
+  with the save_correlation_matrix() function for easy insertion into a paper.
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
