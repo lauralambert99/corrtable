@@ -36,9 +36,6 @@ correlation_matrix <- function(df,
     is.logical(show_significance)
     is.character(replacement)
   })
-  # we need the Hmisc package for this
-  if(!requireNamespace("Hmisc", quietly = TRUE))
-    install.packages("Hmisc")
 
   # retain only numeric and boolean columns
   isNumericOrBoolean = vapply(df, function(x) is.numeric(x) | is.logical(x), logical(1))
