@@ -12,3 +12,7 @@ This is a resubmission.  In this version I have:
 *added references describing methods in package
 
 *removed \dontrun{} from save_correlation_matrix()
+
+*removed the install of 'Hmisc' within correlation_matrix() function
+
+*added Output information for save_correlation_matrix()
