@@ -17,4 +17,4 @@ This is a resubmission.  In this version I have:
 
 *added Output information for save_correlation_matrix()
 
-*dataframe is not a potentially misspelled word
+

@@ -12,6 +12,7 @@
 #' @importFrom utils write.csv2
 #'
 #' @examples
+#' \donttest{
 #' save_correlation_matrix(df = iris,
 #'                         filename = 'iris-correlation-matrix.csv')
 #'
@@ -19,6 +20,7 @@
 #'                         filename = 'mtcars-correlation-matrix.csv',
 #'                         digits = 3,
 #'                         use = 'lower')
+#'                         }
 save_correlation_matrix = function(df, filename, ...) {
   write.csv2(correlation_matrix(df, ...), file = filename)
 }
