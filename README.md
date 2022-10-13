@@ -1,4 +1,13 @@
 # corrtable
+
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/corrtable)](https://cran.r-project.org/package=corrtable)
+
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/corrtable)](https://cran.r-project.org/package=corrtable)
+
+
+ <!-- badges: end -->
+ 
 Publication ready correlation matrix
 CRAN version 0.1.0
 
