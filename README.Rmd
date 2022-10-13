@@ -18,7 +18,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/corrtable)](https://cran.r-project.org/package=corrtable)
-[![CRAN_Downloads_Total](http://cranlogs.r-pkg.org/badges/grand-total/corrtable)](https://cran.r-project.org/package=corrtable)
+badge_cran_downloads(corrtable, period = grand-total)
+
 
  <!-- badges: end -->
 
