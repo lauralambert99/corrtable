@@ -18,7 +18,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/corrtable)](https://cran.r-project.org/package=corrtable)
-[![CRAN_Downloads_Total](http://cranlogs.r-pkg.org/badges/grand-total/corrtable)](https://cran.r-project.org/package=corrtable)
+badge_cran_downloads(corrtable, period = grand-total)
+
 
  <!-- badges: end -->
 
@@ -27,15 +28,19 @@ Work to turn code located at <https://paulvanderlaken.com/2020/07/28/publication
 When run, the package generates a correlation matrix table with significance levels indicated by astericks, making use of the 'Hmisc' package in the 
 background.  The table as printed in R is a series of strings, but once exported as a .csv2 file, is ready for insertion into a paper.
 
+## Installation
+
+
 To install the most recent CRAN version in R:
 
-```
+```{r, eval = FALSE, echo = TRUE}
 install.packages("corrtable")
 ```
 Not all recent features and bugfixes may be included in the current CRAN release.
 
 If you want to download the most recent developmental version of corrtable from Github:
-```
+
+```{r, eval = FALSE, echo = TRUE}
 # install.packages('devtools') # Install devtools if needed
 devtools::install_github('https://github.com/lauralambert99/corrtable')
 ```
