@@ -7,11 +7,13 @@ When run, the package generates a correlation matrix table with significance lev
 background.  The table as printed in R is a series of strings, but once exported as a .csv2 file, is ready for insertion into a paper.
 
 To install the most recent CRAN version in R:
+```
 install.packages("corrtable")
-
+```
 Not all recent features and bugfixes may be included in the current CRAN release.
 
 If you want to download the most recent developmental version of corrtable from Github:
-
+```
 # install.packages('devtools') # Install devtools if needed
 devtools::install_github('https://github.com/lauralambert99/corrtable')
+```
