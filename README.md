@@ -26,3 +26,21 @@ If you want to download the most recent developmental version of corrtable from 
 # install.packages('devtools') # Install devtools if needed
 devtools::install_github('https://github.com/lauralambert99/corrtable')
 ```
+
+## Example Use (Iris dataset)
+Once installed, this package can be used on any dataset, as part of the functionality is drop non-numberic/-boolean columns.  
+
+```
+library(corrtable) #call the package
+correlation_matrix(iris) #generate matrix
+```
+The matrix as generated in R is a table of strings, hence each value being surrounded by " ":
+
+             Sepal.Length  Sepal.Width  Petal.Length  Petal.Width 
+Sepal.Length " 1.000   "   "-0.118   "  " 0.872***"   " 0.818***" 
+Sepal.Width  "-0.118   "   " 1.000   "  "-0.428***"   "-0.366***" 
+Petal.Length " 0.872***"   "-0.428***"  " 1.000   "   " 0.963***" 
+Petal.Width  " 0.818***"   "-0.366***"  " 0.963***"   " 1.000   " 
+
+Once you save it out using ```save_correlation_matrix() ``` the " " will not be present.
+
