@@ -68,3 +68,12 @@ Petal.Width  ""            ""           ""            " 1.00   "
 
 The matrix as generated in R is a table of strings, hence each value being surrounded by " ".
 Once you save it out using ```save_correlation_matrix() ``` the " " will not be present.
+
+## Development
+
+This package is still under development, with enhancements being planned.  If you see any bugs or have suggestions for potential improvements, please raise an issue or submit a pull request.
+
+Planned developments at the moment:
+ - Function to visualize correlation table as well
+   - Option to include significance levels
+ - Have graphic exportable as .png or .svg, color and/or black and white
