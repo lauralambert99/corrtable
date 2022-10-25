@@ -36,11 +36,11 @@ correlation_matrix(iris) #generate matrix
 ```
 The matrix as generated in R is a table of strings, hence each value being surrounded by " ":
 
-             Sepal.Length  Sepal.Width  Petal.Length  Petal.Width 
-Sepal.Length " 1.000   "   "-0.118   "  " 0.872***"   " 0.818***" 
-Sepal.Width  "-0.118   "   " 1.000   "  "-0.428***"   "-0.366***" 
-Petal.Length " 0.872***"   "-0.428***"  " 1.000   "   " 0.963***" 
-Petal.Width  " 0.818***"   "-0.366***"  " 0.963***"   " 1.000   " 
+             Sepal.Length  Sepal.Width  Petal.Length  Petal.Width \n
+Sepal.Length " 1.000   "   "-0.118   "  " 0.872***"   " 0.818***" \n 
+Sepal.Width  "-0.118   "   " 1.000   "  "-0.428***"   "-0.366***" \n
+Petal.Length " 0.872***"   "-0.428***"  " 1.000   "   " 0.963***" \n
+Petal.Width  " 0.818***"   "-0.366***"  " 0.963***"   " 1.000   " \n
 
 Once you save it out using ```save_correlation_matrix() ``` the " " will not be present.
 
