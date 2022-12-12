@@ -67,7 +67,9 @@ Petal.Width  ""            ""           ""            " 1.00   "
 ```
 
 The matrix as generated in R is a table of strings, hence each value being surrounded by " ".
-Once you save it out using ```save_correlation_matrix() ``` the " " will not be present.
+Once you save it out using ```save_correlation_matrix() ```  and then pull into Excel, the " " will not be present.
+
+On a PC and using Excel via Office 365, the csv file is pulled in via Data -> "From Text/CSV".  From there, select the correctly named file.  If you try to just open the file in Excel, it will not look as you may have hoped, with all rows being contained in a single cell, and only one column.
 
 ## Development
 
