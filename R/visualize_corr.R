@@ -83,7 +83,7 @@ library(devtools)
 library(corrtable)
 
 
-correlation_matrix(mtcars, digits = 2)
+correlation_matrix(mtcars)
 visualize_corr(mtcars)
 
 
