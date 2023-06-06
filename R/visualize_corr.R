@@ -7,7 +7,6 @@ break_interval = function() {
 
 
 correlation_breaks = function() {
-  # range twice as long so interval twice as long
   return(seq(-1, 1))
 }
 
@@ -19,6 +18,7 @@ theme_corrtable = function(){
       NULL
     )
 }
+
 
 #' Visualize the correlation matrix with a heatmap
 #'
@@ -53,8 +53,23 @@ visualize_corr = function(df,
                           color_value_negative = '#8b0000',
                           color_text = '#FFFFFF',
                           include_missings = FALSE,
+                          type = "pearson",
+                          show_significance = TRUE,
                           ...) {
   df_correlations = corr_score(df, ...)
+
+  if (show_significance) {
+    sig <- as.matrix(df)
+    # run correlation analysis using Hmisc package
+    cm <- Hmisc::rcorr(sig, type = type)
+    p <- cm$P # Matrix of p-value
+    # define notions for significance levels; spacing is important.
+    stars <- ifelse(is.na(p), "   ", ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", "   "))))
+    c = as.character(df_correlations$correlation)
+    df_correlations$correlation_sig = paste0(c, stars)
+  } else {
+    df_correlations$correlation_sig = df_correlations$correlation
+  }
 
   if (include_missings) {
     cnames = colnames(df)
@@ -65,7 +80,7 @@ visualize_corr = function(df,
   # TODO standardize in heatmap function
   p = ggplot2::ggplot(df_correlations, ggplot2::aes(x = x, y = y)) +
     ggplot2::geom_tile(ggplot2::aes(fill = correlation)) +
-    ggplot2::geom_text(ggplot2::aes(label = correlation), col = color_text) +
+    ggplot2::geom_text(ggplot2::aes(label = correlation_sig), col = color_text) +
     ggplot2::scale_x_discrete(limits = cnames) +
     ggplot2::scale_y_discrete(limits = rev(cnames)) +
     ggplot2::scale_fill_gradient2(low = color_value_negative,
@@ -81,9 +96,34 @@ visualize_corr = function(df,
 
 library(devtools)
 library(corrtable)
-
-
+library(Hmisc)
+#Checks
 correlation_matrix(mtcars)
 visualize_corr(mtcars)
+visualize_corr(mtcars, show_significance = FALSE)
 
+#Sorting out what's going on under the hood - working to get stars added
+z <- as.matrix(mtcars)
+cm <- rcorr(z)
+p <- cm$P
+stars <- ifelse(is.na(p), "   ", ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", "   "))))
+
+c <- as.character(df_correlations$correlation)
+cs <- paste0(c, stars)
+
+#Try adding this to get stars:
+
+#Add significance levels if desired
+if (show_significance) {
+  sig <- as.matrix(df) #Needs to be a matrix before can put through Hmisc
+  #Run correlation using Hmisc - want just the p-values to do stars
+  cm <- Hmisc::rcorr(sig, type = type)
+  p <- cm$P # Matrix of p-value
+  #Define notions for significance levels; pulled from correlation_matrix.
+  stars <- ifelse(is.na(p), "   ", ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", "   "))))
+  c = as.character(df_correlations$correlation) #Needs to be a character to combine
+  df_correlations$correlation_sig = paste0(c, stars) #Combine in new column just for labels
+} else {
+  df_correlations$correlation_sig = df_correlations$correlation #Respecifying what to use if don't want stars
+}
 
