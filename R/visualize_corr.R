@@ -26,6 +26,8 @@ theme_corrtable = function(){
 #' @param color_value_negative color used for lower limit of gradient (high negative correlation)
 #' @param color_text color used for text.  A high contrast with \code{color_value_high}
 #' @param include_missings bool, whether or not to include the variables without correlation values in the plot
+#' @param type character; specifies the type of correlations to compute for p-value; gets passed to `Hmisc::rcorr`; options are `"pearson"` or `"spearman"`; defaults to `"pearson"`
+#' @param show_significance boolean; whether to add `*` to represent the significance levels for the correlations; defaults to `TRUE`
 #'
 #' @return a ggplot object; a heatmap visualization
 #' @export
@@ -60,10 +62,10 @@ visualize_corr = function(df,
 
   if (show_significance) {
     sig <- as.matrix(df)
-    # run correlation analysis using Hmisc package
+    #Run correlation analysis using Hmisc package
     cm <- Hmisc::rcorr(sig, type = type)
     p <- cm$P # Matrix of p-value
-    # define notions for significance levels; spacing is important.
+    #Define notions for significance levels;
     stars <- ifelse(is.na(p), "   ", ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", "   "))))
     c = as.character(df_correlations$correlation)
     df_correlations$correlation_sig = paste0(c, stars)
@@ -77,7 +79,7 @@ visualize_corr = function(df,
     cnames = unique(df_correlations[['x']])
   }
 
-  # TODO standardize in heatmap function
+  #Heatmap function
   p = ggplot2::ggplot(df_correlations, ggplot2::aes(x = x, y = y)) +
     ggplot2::geom_tile(ggplot2::aes(fill = correlation)) +
     ggplot2::geom_text(ggplot2::aes(label = correlation_sig), col = color_text) +
