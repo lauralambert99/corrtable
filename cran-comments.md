@@ -1,6 +1,10 @@
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 1 notes
+
+##Update
+This is an update.  In this version I have:
+*Fixed an error in a function that did not differentiate between Pearson and Spearman correlations.
 
 ##Resubmission
 This is a resubmission.  In this version I have:
